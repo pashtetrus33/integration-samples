@@ -2,6 +2,7 @@ package com.example.service.integration_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
@@ -11,5 +12,4 @@ public class IntegrationAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(IntegrationAppApplication.class, args);
     }
-
 }

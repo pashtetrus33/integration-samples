@@ -1,3 +1,27 @@
+spring:
+  jpa:
+    generate-ddl: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/integration_db
+    username: postgres
+    password: password
+    hikari:
+      schema: app_schema
+      connection-init-sql: create schema if not exists app_schema
+      connection-timeout: 10000
+
 app:
   integration:
     base-url: http://localhost:8082
+  cache:
+    cacheType: inMemory
+    cacheNames:
+      - databaseEntities
+      - databaseEntityByName
+    caches:
+      databaseEntities:
+        expiry: 5s
+      databaseEntityByName:
+        expiry: 10s
+
+
